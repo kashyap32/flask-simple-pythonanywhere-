@@ -1018,7 +1018,7 @@ var isCtrl = false;
           <div style="clear:both;"></div>
         </div>
           <p id="responseNotification" style="display:none;"></p>
-		  <a class="twitter-timeline" href="https://twitter.com/kashyapraval32" data-widget-id="624574466866085888">Tweets by @kashyapraval32</a>
+	<!--make own widget !-->	  <a class="twitter-timeline" href="https://twitter.com/kashyapraval32" data-widget-id="624574466866085888">Tweets by @kashyapraval32</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
 	  </div>
@@ -1041,7 +1041,7 @@ var isCtrl = false;
 		<!-- Place this tag in your head or just before your close body tag. -->
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 
-<!-- Place this tag where you want the widget to render. -->
+<!-- Place this tag where you want the widget to render.USE your own plus.google.com -->
 <div class="g-person" data-width="315" data-href="//plus.google.com/u/0/107496278527119357792" data-theme="dark" data-rel="author"></div>
 
         </div>
@@ -1112,90 +1112,23 @@ $(document).ready(function(){
     myform.submit(function (e) {
         e.preventDefault();
         searchValue = myform.find('input[type="search"]').val();
-								this.action = "http://in.listrak.com/s/61492/WWCemOBgRG3LwaksnY17dfJJEmV8kceD"
+								this.action = ""
         this.submit();
     });
 </script>
 
 
-<script type="text/javascript">
-    var emailBox = $('#footerEmail');
-    var Notification = $('#responseNotification');
 
-    emailBox.keypress(function (event) {
-        if (event.keyCode == 13) {
-            $("#footerSubmit").click();
-        }
-    });
-
-    $('#footerSubmit').click(function (e) {
-        e.preventDefault();
-        var emailValue = emailBox.val();
-        //simple validation
-        var validated = true;
-        if (emailValue == null || emailValue == "") {
-            validated = false;
-        }
-
-        var atpos=emailValue.indexOf("@");
-        var dotpos=emailValue.lastIndexOf(".");
-        if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= emailValue.length) {
-            validated = false;
-        }
-
-        if (validated) {
-            var request = $.ajax({
-                type: "POST",
-                dataType: "json",
-                url: "/handlers/ListrakSubscribe.ashx",
-                data: { email: emailBox.val(), subscribe: "true", sf: "false", ltk: "true" }
-            });
-            request.done(function (msg) {
-                //alert("Response: " + msg);
-                emailBox.val('');
-                Notification.html('Thank you for signing up!');
-                Notification.fadeIn('slow');
-                setTimeout("Notification.fadeOut('slow');", 5000);
-                setTimeout("emailBox.val('Email Address');", 8000);
-            });
-            request.fail(function (jqXHR, textStatus) {
-                //alert("Request failed: " + textStatus);
-                Notification.html("Sorry, we've encountered a temporary error and could not complete your request. Please try again.<br />If the problem persists, please <a href='contact.aspx'>contact our support team</a>");
-                Notification.fadeIn('slow');
-            });
-        }
-
-        else {
-            //alert("Response: " + msg);
-            emailBox.val('');
-            Notification.html('Please enter a valid email address.');
-            Notification.fadeIn('slow');
-            setTimeout("Notification.fadeOut('slow');", 5000);
-        }
-    });
-</script>
+      
+          
 
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-380665-1', 'listrak.com');
-		ga('require', 'displayfeatures');
-  ga('send', 'pageview');
-
-</script>
 
 
-<script type="text/javascript">
-    var biJsHost = (("https:" == document.location.protocol) ? "https://" : "http://");
-    document.write(unescape("%3Cscript src='" + biJsHost + "cdn.listrakbi.com/scripts/script.js?m=IFXBr5BkayOo&v=1' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-    _ltk.Click.Submit();
-</script>
+
+
+
+
 
 
 
